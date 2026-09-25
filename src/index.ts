@@ -12,7 +12,7 @@ const moduleRegistration = {
   id: "welcome",
   uuid: uuidv4(),
   url: `http://localhost:${port}`,
-  emoji: "🐙",
+  emoji: "👋",
   introduction: "Send !welcome to see your current welcome message, and set a new one.",
   title: "Welcome Sender",
   description: "Sends a welcome message to your group when new members join.",
