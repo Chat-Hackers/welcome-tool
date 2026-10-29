@@ -1,13 +1,17 @@
 {
   "id": "welcome",
-  "uuid": "603a0f0d-b1a3-4829-b23b-4a821ad5abdc",
+  "uuid": "01550802-9add-452a-bea5-4421e38f93d2",
   "url": "http://localhost:5051",
   "emoji": "👋",
   "introduction": "Send !welcome to see your current welcome message, and set a new one.",
   "title": "Welcome Sender",
   "description": "Sends a welcome message to your group when new members join.",
-  "event_types": [
-    "m.room.member",
-    "m.room.message"
-  ]
+  "event_types": {
+    "active": [
+      "m.room.message"
+    ],
+    "passive": [
+      "m.room.member"
+    ]
+  }
 }

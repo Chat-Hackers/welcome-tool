@@ -8,7 +8,7 @@ import { startDuckDB } from "./duckdb";
 
 const port = 5051;
 
-const moduleRegistration = {
+const toolRegistration = {
   id: "welcome",
   uuid: uuidv4(),
   url: `http://localhost:${port}`,
@@ -16,13 +16,14 @@ const moduleRegistration = {
   introduction: "Send !welcome to see your current welcome message, and set a new one.",
   title: "Welcome Sender",
   description: "Sends a welcome message to your group when new members join.",
-  event_types: [
-    "m.room.member", "m.room.message"
-  ]
+  event_types: {
+    active: ["m.room.message"],
+    passive: ["m.room.member"]
+  }
 }
 
 function generateRegistrationFile() {
-  fs.writeFileSync(`./${moduleRegistration.id}.json`, JSON.stringify(moduleRegistration, null, 2));
+  fs.writeFileSync(`./${toolRegistration.id}.json`, JSON.stringify(toolRegistration, null, 2));
 }
 
 async function start() {
