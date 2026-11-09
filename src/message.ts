@@ -70,7 +70,7 @@ const handleMessage = async (event, botUserId) => {
   }
 
   //if message has the tool's wake word, say hello
-  if (message.includes("!welcome")) {
+  if (message.includes("👋") && message.includes("🤖")) {
     return hello(event.room_id);
   }
 };
