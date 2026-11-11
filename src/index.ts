@@ -46,7 +46,9 @@ async function start() {
     if (event.type === "m.room.message")
       response = await handleMessage(event, botUserId);
 
-    if (event.type === "m.room.member" && event.content.membership === "join") {
+    if (event.type === "m.room.member" &&
+      event.content.membership === "join" &&
+      event.unsigned.prev_content.membership !== "join") {
       response = await handleJoin(event);
     }
 
