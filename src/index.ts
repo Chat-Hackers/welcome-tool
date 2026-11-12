@@ -48,7 +48,7 @@ async function start() {
 
     if (event.type === "m.room.member" &&
       event.content.membership === "join" &&
-      event.unsigned.prev_content.membership !== "join") {
+      event.unsigned.prev_content.membership === "invite") {
       response = await handleJoin(event);
     }
 
